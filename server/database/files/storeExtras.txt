@@ -1,0 +1,3 @@
+hotelli;100;
+ruoka;15;
+suihkupalvelu;25;

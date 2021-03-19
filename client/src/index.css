@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  height: 100vh;
+}
+
+.elementContainer {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 50rem;
+}
+
+.registrationFormContainer {
+  width: 24rem;
+}
+
+.registrationFormLegend {
+  width: 14rem;
+  background: #dee2e6;
+}
+
+.loginFormContainer {
+  width: 24rem;
+}
+
+.loginFormLegend {
+  width: 14rem;
+  background: #dee2e6;
+}
+
+.createPostFormContainer {
+  width: 100%;
+  max-width: 40rem;
+  padding-bottom: 3rem;
+}
+
+.errorMessage {
+  font-size: 12px;
+  letter-spacing: 0.05rem;
+  padding-left: 0.25rem;
+}
+
+h1 {
+  padding-left: 5rem;
+  padding-bottom: 3rem;
+}
+
+.navbar {
+  background-color: rgb(0, 128, 107);
+  color: red;
+}
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /*   min-height: 400px; */
+}
+
+.store {
+  align-items: center;
+  text-align: center;
+}
+
+.tickets {
+  border: 1px blue solid;
+  margin: 2%;
+}
+
+.flex-home-left {
+  width: 35%;
+  background-color: white;
+  border: 5px solid green;
+  padding: 20px;
+  margin: 0.5%;
+  min-height: 500px;
+}
+
+.flex-home-right {
+  width: 55%;
+  background-color: honeydew;
+  border: 5px solid green;
+  margin: 0.5%;
+  padding: 20px;
+  min-height: 500px;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.pointer-event {
+  pointer-events: all;
+}
+
+.tickets.selected {
+  background-color: rgb(245, 218, 42);
+}
