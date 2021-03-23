@@ -13,6 +13,8 @@ const Home = ({ isLoggedIn, setLoggedIn }) => {
   }
 
   return (
+
+
     <div>
       <div className="flex-container">
         <div className="flex-home-left">
@@ -44,6 +46,7 @@ const Home = ({ isLoggedIn, setLoggedIn }) => {
         </div>
       </div>
     </div>
+   
   );
 };
 

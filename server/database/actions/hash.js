@@ -9,8 +9,6 @@ exports.getHashedPassword = (password) => {
   return hash;
 };
 
-//todo: tarkista löytyykö käyttäjältä tokenia
-//poista vanhentuneet tokenit..
 exports.generateAuthToken = (email) => {
   let token = crypto.randomBytes(30).toString("hex");
 

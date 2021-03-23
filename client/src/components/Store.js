@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, Redirect } from "react-router-dom";
-
-import { Link } from "react-router-dom";
-import config from "../config";
 
 import { useAuth } from "../context/auth";
-
-import Login from "./Login";
 
 import fetchApi from "../api/fetchApi";
 
@@ -15,9 +9,9 @@ const Store = () => {
   const [tickets, setTickets] = useState({
     key: { selected: false, price: 0 },
   });
-  const [ticketsSelected, setTicketsSelected] = useState({});
+
   const [extras, setExtras] = useState({ key: { selected: false, price: 0 } });
-  const [extrasSelected, setExtrasSelected] = useState({});
+
   const { authTokens } = useAuth();
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -54,7 +48,6 @@ const Store = () => {
         }
       });
       setExtras(res_object);
-      //setTotalPrice(price);
     }
   };
 
@@ -109,7 +102,6 @@ const Store = () => {
               //ticketDataArray.pop();
 
               setTickets(ticketObj);
-              setTicketsSelected(ticketObjSelect);
 
               let extrasDataArray = extrasData.split("\n");
               let extrasObj = {};
@@ -126,7 +118,6 @@ const Store = () => {
               }
 
               setExtras(extrasObj);
-              setExtrasSelected(extrasObjSelect);
             } catch (error) {}
           } else {
           }
@@ -138,17 +129,9 @@ const Store = () => {
 
   return (
     <div>
-      {/*  <h1>FESTARIKESÄ!</h1> */}
-
       <div className="flex-container store">
         <div className="flex-home-left">
-          <div
-            style={
-              {
-                /* height: "60%"  */
-              }
-            }
-          >
+          <div>
             <h2>Hinta </h2>
 
             <p>{totalPrice} eur</p>
@@ -184,7 +167,7 @@ const Store = () => {
                     className={`flex-container store tickets ${selected_string} `}
                     id={`ticket:${day + ":" + tickets[day].price}`}
                     key={day}
-                    /* onClick={} */ style={{ width: "29%" }}
+                    style={{ width: "29%" }}
                   >
                     <a className="no-pointer-events">
                       <p className="no-pointer-events">{day}</p>
@@ -215,10 +198,7 @@ const Store = () => {
                   key={key}
                   className={`flex-container store tickets ${selected_string} `}
                 >
-                  <div
-                    className="pointer-event" /* style={{ width: "33%" }} */
-                    /* onClick={} */
-                  >
+                  <div className="no-pointer-events">
                     <a className="no-pointer-events">
                       <p className="no-pointer-events">{key}</p>
                       <p className="no-pointer-events">

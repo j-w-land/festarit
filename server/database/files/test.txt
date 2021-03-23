@@ -1,1 +1,0 @@
-{"days":{"1 päivä":100,"2 päivää":150,"3 päivää":200},"extra":{"hotel":100,"ruoka":15,"suihkupalvelu":25}}

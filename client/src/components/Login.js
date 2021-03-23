@@ -23,7 +23,6 @@ const Login = ({ setLoggedIn }) => {
     updateFormData({
       ...formData,
 
-      // Trimming any whitespace
       [e.target.name]: e.target.value.trim(),
     });
   };
@@ -57,19 +56,14 @@ const Login = ({ setLoggedIn }) => {
         setMessage({
           data: hasError
             ? data.error
-            : "Logged in successfully, redirecting...",
+            : "Sisäänkirjautuminen onnistui, ohjataan...",
           type: hasError ? "alert-danger" : "alert-success",
         });
 
         if (!data.error) {
-          console.log("ERROR_FALSE");
-          console.log(data);
           setAuthTokens(data);
-          //setLoggedIn(true);
         } else {
-          console.log("ERROR_TRUE");
           setAuthTokens(data);
-          //setLoggedIn(false);
         }
       })
       .catch((err) => console.log(err));

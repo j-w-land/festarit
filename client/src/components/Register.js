@@ -7,7 +7,6 @@ import fetchApi from "../api/fetchApi";
 
 const Register = ({ setLoginRegister, handleLoginRegister, setLoggedIn }) => {
   const { setAuthTokens } = useAuth();
-  /*   const [isLoggedIn, setLoggedIn] = useState(false); */
 
   const [message, setMessage] = useState();
   const [formData, updateFormData] = useState({
@@ -27,7 +26,6 @@ const Register = ({ setLoginRegister, handleLoginRegister, setLoggedIn }) => {
     updateFormData({
       ...formData,
 
-      // Trimming any whitespace
       [e.target.name]: e.target.value.trim(),
     });
   };
@@ -85,13 +83,9 @@ const Register = ({ setLoginRegister, handleLoginRegister, setLoggedIn }) => {
         });
 
         if (!data.error) {
-          console.log(data);
-          console.log("REGISTER_SUCCESS");
           setAuthTokens(data);
-          /*  setLoggedIn(true); */
         } else {
           setAuthTokens(data);
-          /*    setLoggedIn(false); */
         }
       })
       .catch((err) => console.log(err));

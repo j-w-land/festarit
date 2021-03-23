@@ -11,17 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 let userRouter = require("./routes/user");
 let storeRouter = require("./routes/store");
 
+// serve react build from the server
 app.use(express.static(path.join(__dirname, "..", "client", "build")));
-
-console.log("TEST");
-
-app.get("/api/hey", (req, res) => res.send(JSON.stringify("ho!")));
-
-app.get("/api", (req, res) => {
-  //console.log(req.body);
-  console.log("BODY");
-  //res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
-});
 
 app.use("/api/user", userRouter);
 app.use("/api/store", storeRouter);

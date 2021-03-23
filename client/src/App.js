@@ -14,15 +14,9 @@ function App() {
       existingTokens = JSON.parse(localStorage.getItem("tokens"));
     } catch (error) {}
 
-    console.log(existingTokens);
-    console.log("existingTokens__-");
-
     let tokensValue = { messsage: null, token: null, status: false };
     if (existingTokens == null || existingTokens == undefined) {
     } else {
-      console.log(tokensValue);
-      console.log("tokensValue___");
-
       fetchApi("/user/authenticate", {
         method: "post",
         headers: {
@@ -31,15 +25,9 @@ function App() {
         body: JSON.stringify({ token: existingTokens.token }),
       })
         .then((data) => {
-          console.log("login_res: " + data);
-          console.log(data);
           const hasError = "error" in data && data.error != null;
-          console.log(hasError);
-          console.log("hasError");
 
           if (!data.error) {
-            console.log("ERROR_FALSE");
-            console.log(data);
             //setAuthTokens(data);
             if (data.status === true) {
               setLoggedIn(true);
@@ -49,9 +37,7 @@ function App() {
             setTokens(tokensValue);
             setLoggedIn(false);
           }
-          console.log(existingTokens);
-          console.log(tokensValue);
-          console.log("tokensValue_______________!");
+
           setAuthTokens(tokensValue);
         })
         .catch((err) => console.log(err));
@@ -59,8 +45,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(authTokens.token);
-    console.log("TOKENS___");
     if (
       authTokens === undefined ||
       authTokens.token === undefined ||
@@ -71,8 +55,6 @@ function App() {
       if (authTokens.status === true) setLoggedIn(true);
     }
   }, [authTokens]);
-
-  const handleAuthentication = async () => {};
 
   const setTokens = (data) => {
     localStorage.setItem("tokens", JSON.stringify(data));

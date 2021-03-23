@@ -10,9 +10,6 @@ exports.register = async function (body) {
   async function readWriteAsync() {
     let existingUser = await findUser(body.email);
 
-    console.log(existingUser);
-    console.log("existingUser");
-
     if (existingUser !== null)
       return {
         status: false,
@@ -43,7 +40,6 @@ exports.register = async function (body) {
     let authToken = hash.generateAuthToken(body.email);
     return { status: true, token: authToken };
   }
-  return "Käyttäjän rekisteröinti epäonnistui.";
 };
 
 exports.findOne = async function (email) {
@@ -52,25 +48,18 @@ exports.findOne = async function (email) {
 };
 
 async function findUser(email) {
-  console.log(email);
-  console.log("findUser_email");
   const rl = readline.createInterface({
     input: fs.createReadStream("./database/files/users.txt"),
   });
 
   //https://stackoverflow.com/questions/43638105/how-to-get-synchronous-readline-or-simulate-it-using-async-in-nodejs
   for await (const line of rl) {
-    console.log(line);
     try {
       if (line.split(";")[1] === email) {
-        console.log("OLI_JO________--");
         rl.removeAllListeners();
         return line;
       }
-    } catch (error) {
-      console.log("ERROR___");
-      console.log(error);
-    }
+    } catch (error) {}
   }
   return null;
 }
@@ -86,17 +75,12 @@ async function searchAuthTokens(token) {
   });
 
   for await (const line of rl) {
-    console.log(line);
     try {
       if (line.split(";")[1] === token) {
-        console.log("OLI_JO________--");
         rl.removeAllListeners();
         return line;
       }
-    } catch (error) {
-      console.log("ERROR___");
-      console.log(error);
-    }
+    } catch (error) {}
   }
   return null;
 }

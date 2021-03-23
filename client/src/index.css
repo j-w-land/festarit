@@ -13,7 +13,7 @@ code {
 }
 
 .container {
-  height: 100vh;
+  height: 90vh;
 }
 
 .elementContainer {
@@ -80,7 +80,7 @@ h1 {
   padding: 0;
   margin: 0;
   list-style: none;
-  /*   min-height: 400px; */
+  /*    min-height: 400px; */
 }
 
 .store {
@@ -99,7 +99,7 @@ h1 {
   border: 5px solid green;
   padding: 20px;
   margin: 0.5%;
-  min-height: 500px;
+  min-height: 800px;
 }
 
 .flex-home-right {
@@ -108,7 +108,7 @@ h1 {
   border: 5px solid green;
   margin: 0.5%;
   padding: 20px;
-  min-height: 500px;
+  min-height: 800px;
 }
 
 .no-pointer-events {
@@ -121,4 +121,18 @@ h1 {
 
 .tickets.selected {
   background-color: rgb(245, 218, 42);
+}
+
+td {
+  border: 1px solid green;
+  cursor: default;
+}
+
+tr:hover {
+  background-color: rgb(217, 229, 230);
+}
+
+tr.clicked {
+  background-color: rgb(221, 221, 221);
+  font-weight: 640;
 }
