@@ -1,5 +1,5 @@
 # festarit
 
-Dev-tilassa ajaminen:
-server: npm run dev
+Dev-tilassa ajaminen:\n
+server: npm run dev\n
 client: npm run-script start
